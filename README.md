@@ -1,12 +1,12 @@
 # Wamenak Driver [![bitHound Score][bithound-img]][bithound-url]
 
-Wamenak Order Application
+PDAM Tirtauli Mobile Application
 
 ## Usage
 
 #### PhoneGap CLI
 
-Wamenak Driver Order Application - using the [phonegap-cli][phonegap-cli-url].
+PDAM Tirtauli Mobile Application - using the [phonegap-cli][phonegap-cli-url].
 
     phonegap create my-app
 
