@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 user-scalable=no">
+    
+    <!--Add to homescreen And color theme-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Wamenak">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <!-- Theme color for chrome, firefox and opera-->
+    <meta name="theme-color" content="#27a542">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#27a542">
+
+    <title>Wamenak-Driver</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
+    <script src="js/acl.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/order.js"></script>
+    
+    <script>
+        function goBack() {
+            window.location = "ongoing.html";
+        }
+    </script>
+
+</head>
+<body id="order" onload="otentikasi('order');">
+    
+ <!-- loader class -->
+<div class="loader"></div>
+<!-- loader class -->  
+
+ <!-- snackbar -->
+ <div id="snackbar"></div>
+     
+<header>
+  <div id="main-nav">
+
+    <nav class="navbar">
+        <div class="navbar-header">
+            <button onclick="goBack()" id="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="navbar-brand text-center">
+                <img src="img/mylogo.png" alt="" class="img-responsive" width="85" style="margin:-12% 0 0 -15%;">
+                <h4 style="color:#e8af00;font-weight: bold;margin-right:25px;">Driver</h4>
+            </div>
+        </div>
+    </nav>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+    <h4 style="font-weight: bold;">Detail Order : <span id="ordercode"> </span> </h4>
+
+    <br>
+    <img src="img/profil.png" width="70" alt="" class="cust-img img-rounded2">
+    <p class="ff2 text-center" id="ordercustomer"> </p>
+
+    <div class="menu-list">
+        <span class="ff2">Menu Pesanan :</span>
+        <br>
+
+        <table class="table" id="protable">
+            
+        </table>
+    </div>
+
+    <br>
+    <span class="ff2"> <b> Alamat Pengantaran : </b> </span> <br>
+    <span style="font-size:9pt;" id="orderaddress"> </span>
+    <br> <br>
+    <button class="btn btnorder" onclick="window.location.href='order-start.html'">MULAI</button>
+</div>
+
+<script src="js/cekorder.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script>  
+  
+</body>
+</html>

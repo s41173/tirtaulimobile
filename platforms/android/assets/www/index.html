@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 user-scalable=no">
+    
+    <!--Add to homescreen And color theme-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tirtauli-Mobile">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <!-- Theme color for chrome, firefox and opera-->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#fff">
+
+    <title> Tirtauli-Mobile </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/w3style.css">
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <style type="text/css">
+        .batas{ width: 100%; height: 10px;}
+        .clear{ clear: both;}
+    </style>
+    
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
+    <script src="js/acl.js"></script>
+    <script src="js/routing.js"></script>
+    <!-- <script src="js/home.js"></script> -->
+
+</head>
+<body id="index" onload="otentikasi('index');">
+     
+     <!-- loader class -->
+    <div class="loader"></div>
+    <!-- loader class -->  
+    
+     <!-- snackbar -->
+     <div id="snackbar"></div>
+     
+<header>
+
+  <div id="main-nav">
+
+    <nav class="navbar">
+    </nav>
+
+  </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <img src="img/mylogo.png" alt="" class="img-responsive logologin" width="125">
+  
+  <div class="col-xs-12 mtop3">
+    
+     <div class="col-xs-4 iconbox">
+      <button class="app" onclick="window.location.href='profil.html'">
+        <img src="img/Profile-icon-9.png" width="50" alt="">
+      </button>
+      <span class="lbl">Profil</span>
+    </div>
+
+    <div class="col-xs-4" onclick="window.location.href='billing.html'">
+      <button class="app">
+        <img src="img/tnc.png" width="50" alt="">
+      </button>
+      <span class="lbl"> Informasi Tagihan </span>
+    </div>
+
+    <div class="col-xs-4" onclick="window.location.href='order-history.html'">
+      <button class="app">
+        <img src="img/mh.png" width="50" alt="">
+      </button>
+      <span class="lbl">Riwayat Pesanan</span>
+    </div>
+    
+    <div class="clear"></div>
+    <div class="batas"></div>
+    
+     <div class="col-xs-4">
+        <button class="app" onclick="window.location.href='ewallet.html'">
+          <img src="img/ewallet-500x500.png" width="50" alt="">
+        </button>
+        <span class="lbl">E-Wallet</span>
+      </div>
+  
+      <div class="col-xs-4">
+          <button class="app" onclick="window.location.href='topup.html'">
+            <img src="img/topup.png" width="50" alt="">
+          </button>
+          <span class="lbl">Top-up</span>
+        </div>
+  
+        <div class="col-xs-4">
+          <button class="app" onclick="window.location.href='ewallet-history.html'">
+            <img src="img/ewh.png" width="50" alt="">
+          </button>
+          <span class="lbl">Riwayat Top-up</span>
+        </div>
+    
+        <div class="col-xs-4 col-xs-offset-4">
+          <button class="app" onclick="window.location.href='ongoing.html'">
+            <img src="img/delivery.png" width="50" alt="">
+          </button>
+          <span class="lbl">On-going Order</span>
+        </div>
+        
+  </div>
+
+</div>
+  
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 user-scalable=no">
+    
+    <!--Add to homescreen And color theme-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tirtauli-Mobile">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Theme color for chrome, firefox and opera-->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+
+    <title>Tirtauli-Mobile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    
+    <link rel="stylesheet" href="css/toast.css">
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
+    <script src="js/acl.js"></script>
+    <script src="js/routing.js"></script>
+    
+    <script type="text/javascript">
+         $(document).ready(function (e) {
+             
+    // ajax loading
+    
+    $('#btnlogin').click(function() {
+        
+        var id = $("#user").val();
+        if (id){
+           
+        var nilai = '{ "custid":"'+id+'", "device":"'+localStorage.device+'" }';
+		$.ajax({
+			type: 'POST',
+			url: api+'api/login',
+			data:  nilai,
+            dataType: 'json',
+			success: function(data) {
+                localStorage.setItem("userid", data.userid);
+                localStorage.setItem("instalasi", data.noinstalasi);
+                localStorage.setItem("log", data.log);
+                setTimeout(function(){ window.location = "index.html"; }, 1000);
+			},
+			error: function(e) 
+	    	{
+                var stts = JSON.parse(e.responseText);
+                if (e.status === 401){
+                    toast(stts.error);
+                }else{
+                    toast('Failed to communicate to server');
+                    setTimeout(function(){ navigator.app.exitApp(); }, 3000);
+                }
+	    	} 
+		})
+		return false;
+
+        }else{ toast('ID Pelanggan Diperlukan'); }
+	});
+                   
+    }); // end document ready
+     </script>   
+     
+    <style type="text/css">
+    
+        /*loader */
+        .loader {
+          width: 90px;
+          height: 90px;
+          margin-left: auto;
+          margin-right: auto;
+          display: none;
+          z-index: 10;
+          position: absolute;
+          top: 28.4%;
+          left: 38%;
+          background-image: url(../images/zoomloader.gif);
+        }
+
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
+        #resend{
+            text-align: center;
+            font-size: 9pt;
+            display: none;
+        }
+        
+        #resendlink{
+            text-align: center;
+            font-size: 10pt;
+            font-weight: bold;
+            color: #ff6f00 !important;
+            display: none;
+        }
+    
+    </style>
+        
+</head>
+<body id="index">
+     
+     <!-- snackbar -->
+     <div id="snackbar"></div>
+     
+      <header>
+          <div id="main-nav">
+			<nav class="navbar">
+               <div class="container">
+                   
+               </div>
+            </nav>
+		</div>
+      </header>
+       
+    
+     <div class="container-fluid" id="login">
+         
+    <!-- loader class -->
+    <div class="loader"></div>
+    <!-- loader class -->  
+         <img src="img/mylogo.png" alt="" class="img-responsive logologin" width="185">
+
+         <h3 class="text-center text-pelayanan"> Pelayanan Pelanggan </h3>
+         <form action="" id="material" class="ajaxform" style="margin: 0 0 10px 0; ">
+           
+            <div id="guser" class="group">
+<input type="text" id="user" required><span class="highlight"></span><span id="barname" class="bar"></span>
+            <label> Pelanggan ID </label>
+            </div>
+
+            <center>
+            <button type="button" id="btnlogin" class="btn" value="otp"> Login </button>
+            </center>
+        </form>
+        
+        <script>
+            $(window, document, undefined).ready(function() {
+    
+              $('input').blur(function() {
+                var $this = $(this);
+                if ($this.val())
+                  $this.addClass('used');
+                else
+                  $this.removeClass('used');
+              });
+    
+              var $ripples = $('.ripples');
+    
+              $ripples.on('click.Ripples', function(e) {
+    
+                var $this = $(this);
+                var $offset = $this.parent().offset();
+                var $circle = $this.find('.ripplesCircle');
+    
+                var x = e.pageX - $offset.left;
+                var y = e.pageY - $offset.top;
+    
+                $circle.css({
+                  top: y + 'px',
+                  left: x + 'px'
+                });
+    
+                $this.addClass('is-active');
+    
+              });
+              $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+                $(this).removeClass('is-active');
+              });
+    
+            });
+            </script>
+        <hr>
+        
+    </div>
+        
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script>    
+    
+    
+</body>
+</html>

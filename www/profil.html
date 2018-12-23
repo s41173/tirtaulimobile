@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 user-scalable=no">
+    
+    <!--Add to homescreen And color theme-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tirtauli-Mobile">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Theme color for chrome, firefox and opera-->
+    <meta name="theme-color" content="#27a542">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#27a542">
+
+    <title>Wamenak-Driver</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
+    <script src="js/acl.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/profil.js"></script>
+    
+    <script>
+        function goBack() { window.location = "index.html"; }
+    </script>
+
+</head>
+<body id="profil" onload="otentikasi('profil');">
+    
+ <!-- loader class -->
+<div class="loader"></div>
+<!-- loader class -->  
+
+ <!-- snackbar -->
+ <div id="snackbar"></div>
+     
+<header>
+
+  <div id="main-nav">
+
+    <nav class="navbar">
+        <div class="navbar-header">
+        </div>
+    </nav>
+
+  </div>
+</header>
+
+<style type="text/css">
+    
+    #blogout{ width: 95%;}
+    #profilepelanggan{ font-weight: bold; }
+    
+</style>
+
+<div class="container-fluid mtop2">
+    <img id="proimage" src="img/profil.png" width="70" alt="" class="cust-img img-rounded2">
+    <h4 id="profilepelanggan" class="text-center"> Profil Pelanggan </h4>
+    <table class="table total">
+        
+        <tr>
+            <td>ID / Jenis </td>
+            <td><b id="ic"></b></td>
+        </tr>
+
+        <tr>
+            <td> No Instalasi </td>
+            <td><b id="instalasi"></b></td>
+        </tr>
+
+        <tr>
+            <td> No Meter </td>
+            <td><b id="metercode"></b></td>
+        </tr>
+
+        <tr>
+            <td>Nama</td>
+            <td><b id="name"></b></td>
+        </tr>
+
+        <tr>
+            <td> Alamat </td>
+            <td><b id="address"></b></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"> <button type="button" class="btn" id="blogout" onclick="logout();"> Logout </button> </td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script>
+
+</body>
+</html>
