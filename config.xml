@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.wamenakdriver" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Wamenak Driver</name>
+    <name>PDAM-Tirtauli</name>
     <description>
-	Wamenak Driver
+	PDAM-Tirtauli Application
     </description>
-    <author email="info@wamenak.com" href="http://wamenak.com">
-       Wamenak
+    <author email="info@wamenak.com" href="http://www.pdamtirtauli.com">
+       PDAM Tirtauli
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
