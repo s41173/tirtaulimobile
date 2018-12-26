@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 user-scalable=no">
+    
+    <!--Add to homescreen And color theme-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tirtauli-Mobile">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <!-- Theme color for chrome, firefox and opera-->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#fff">
+
+    <title>Wamenak-Driver</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
+    <script src="js/acl.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/ticket.js"></script>
+
+</head>
+<body id="topup" onload="">
+
+    <!-- loader class -->
+<div class="loader"></div>
+<!-- loader class -->  
+
+ <!-- snackbar -->
+ <div id="snackbar"></div>
+   
+    <header>
+
+        <div id="main-nav">
+          <nav class="navbar">
+              <div class="navbar-header">
+              </div>
+          </nav>
+        </div>
+      </header>
+       
+     <div class="container-fluid" id="login">
+         <h3 class="text-center"> Keluhan Pelanggan </h3>
+         <form action="" id="material">
+            <div class="group">
+<input type="number" id="tmobile" style="width: 96%;" placeholder="No Handphone"><span class="highlight">
+</span><span id="barname" class="bar"></span>
+            </div>
+            <div class="group">
+              <!-- <input type="text" id="tinstalasi" style="width: 96%;" placeholder="Instalasi"><span class="highlight"> -->
+<textarea id="tdesc" style="width:95%;" rows="3" placeholder="Keterangan Keluhan"></textarea> <span class="highlight"></span>
+</span><span id="barname" class="bar"></span>
+            </div>
+            <button type="button" class="btn" onclick="ticketprocess()"> Process </button>
+        </form>
+        <script>
+            $(window, document, undefined).ready(function() {
+    
+              $('input').blur(function() {
+                var $this = $(this);
+                if ($this.val())
+                  $this.addClass('used');
+                else
+                  $this.removeClass('used');
+              });
+    
+              var $ripples = $('.ripples');
+    
+              $ripples.on('click.Ripples', function(e) {
+    
+                var $this = $(this);
+                var $offset = $this.parent().offset();
+                var $circle = $this.find('.ripplesCircle');
+    
+                var x = e.pageX - $offset.left;
+                var y = e.pageY - $offset.top;
+    
+                $circle.css({
+                  top: y + 'px',
+                  left: x + 'px'
+                });
+    
+                $this.addClass('is-active');
+    
+              });
+              $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+                $(this).removeClass('is-active');
+              });
+    
+            });
+            </script>
+           <script>
+            $(window, document, undefined).ready(function() {
+    
+              $('textarea').blur(function() {
+                var $this = $(this);
+                if ($this.val())
+                  $this.addClass('used');
+                else
+                  $this.removeClass('used');
+              });
+    
+              var $ripples = $('.ripples');
+    
+              $ripples.on('click.Ripples', function(e) {
+    
+                var $this = $(this);
+                var $offset = $this.parent().offset();
+                var $circle = $this.find('.ripplesCircle');
+    
+                var x = e.pageX - $offset.left;
+                var y = e.pageY - $offset.top;
+    
+                $circle.css({
+                  top: y + 'px',
+                  left: x + 'px'
+                });
+    
+                $this.addClass('is-active');
+    
+              });
+    
+              $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+                $(this).removeClass('is-active');
+              });
+    
+            });
+            </script>
+
+            <style type="text/css">
+                
+                .tittable{
+                  font-weight: bold;
+                }
+
+            </style>
+        
+    </div>
+    
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script>   
+    
+</body>
+</html>

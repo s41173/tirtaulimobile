@@ -43,6 +43,7 @@
         if (id){
            
         var nilai = '{ "custid":"'+id+'", "device":"'+localStorage.device+'" }';
+        console.log(api);
 		$.ajax({
 			type: 'POST',
 			url: api+'api/login',
@@ -52,6 +53,7 @@
                 localStorage.setItem("userid", data.userid);
                 localStorage.setItem("instalasi", data.noinstalasi);
                 localStorage.setItem("log", data.log);
+                localStorage.setItem("user", data.user);
                 setTimeout(function(){ window.location = "index.html"; }, 1000);
 			},
 			error: function(e) 
