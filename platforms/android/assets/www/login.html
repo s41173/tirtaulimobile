@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
     
     <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/style.css">
     
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -43,6 +44,7 @@
         if (id){
            
         var nilai = '{ "custid":"'+id+'", "device":"'+localStorage.device+'" }';
+        console.log(api);
 		$.ajax({
 			type: 'POST',
 			url: api+'api/login',
@@ -52,6 +54,7 @@
                 localStorage.setItem("userid", data.userid);
                 localStorage.setItem("instalasi", data.noinstalasi);
                 localStorage.setItem("log", data.log);
+                localStorage.setItem("user", data.user);
                 setTimeout(function(){ window.location = "index.html"; }, 1000);
 			},
 			error: function(e) 
@@ -76,7 +79,7 @@
     <style type="text/css">
     
         /*loader */
-        .loader {
+        /* .loader {
           width: 90px;
           height: 90px;
           margin-left: auto;
@@ -84,7 +87,7 @@
           display: none;
           z-index: 10;
           position: absolute;
-          top: 28.4%;
+          top: 28%;
           left: 38%;
           background-image: url(../images/zoomloader.gif);
         }
@@ -97,7 +100,7 @@
         @keyframes spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
-        }
+        } */
         
         #resend{
             text-align: center;

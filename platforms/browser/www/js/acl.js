@@ -90,15 +90,17 @@ function logout(){
 
     localStorage.removeItem("instalasi");
     localStorage.removeItem("userid");
+    localStorage.removeItem("user");
     localStorage.removeItem("log");
     window.location = "login.html";
 
     // navigator.notification.confirm('Are you sure want to logout ?'
     //         , function(button) {
     //             if (button == 2 || button == 0) {
-    //     localStorage.removeItem("instalasi");
-    //     localStorage.removeItem("userid");
-    //     localStorage.removeItem("log");
+    //    localStorage.removeItem("instalasi");
+    //    localStorage.removeItem("userid");
+    //    localStorage.removeItem("user");
+    //    localStorage.removeItem("log");
     //     window.location = "login.html";
     //             }
     //         }

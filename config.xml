@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.wamenakdriver" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>PDAM-Tirtauli</name>
+<widget id="com.phonegap.pdamtirtauli" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>PDAM Tirtauli</name>
     <description>
-	PDAM-Tirtauli Application
+	PDAM Tirtauli Application
     </description>
     <author email="info@wamenak.com" href="http://www.pdamtirtauli.com">
        PDAM Tirtauli
@@ -115,7 +115,7 @@
     
     <platform name="android">
     <preference name="SplashScreen" value="xscreen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreenDelay" value="4000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="AutoHideSplashScreen" value="true" />
     </platform>

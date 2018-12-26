@@ -1,29 +1,34 @@
 var start = 0;
-var limit = 10;
+var limit = 5;
 var reachedMax = false;
 
 get_order();
 
-$(window).scroll(function(){    
-    if ($(window).scrollTop() == $(document).height() - $(window).height()){
-        get_order();
-    }
+$(window).scroll(function(){   
+    var lastScrollTop = 0;
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop){
+        // downscroll code
+        if (Math.round(st) == $(document).height() - $(window).height()){
+           get_order();
+        }    
+    } 
+    lastScrollTop = st;
 });
 
 function get_order(){
        
     $(document).ready(function (e) {   
         
-        var nilai = '{ "courier":"'+localStorage.userid+'", "limit":"'+limit+'", "start":"'+start+'" }';
+        var nilai = '{ "custid":"'+localStorage.userid+'", "limit":"'+limit+'", "start":"'+start+'" }';
         
         if (reachedMax)
             return;
 
         $.ajax({
             type: 'POST',
-            url: api+'sales/get_sales_by_courier_json',
+            url: api+'api/get_complain',
             data : nilai,
-            contentType: "application/json",
             dataType: 'json',
             success: function(data)
             {   
@@ -38,22 +43,17 @@ if (data.content != null && data.content != 'reachedMax'){
 con = con+
 "<div class=\"rw\">"+
 "<div class=\"container-fluid\">"+
-    "<span class=\"ff2\" style=\"padding-right: 25px;\">"+datax[i].code+"</span>"+
+    "<span class=\"ff2\" style=\"padding-right: 25px;\">"+datax[i].ticketno+"</span>"+
     "<span class=\"date\">"+datax[i].dates+"</span>"+
+    "<span class=\"ff2\" style=\"float: right;\">"+datax[i].status.toUpperCase()+"</span>"+
     "<hr style=\"margin: 0;padding: 3px 0;\">"+
 
-    "<div class=\"col-xs-3\" style=\"padding: 0\">"+
-        "<img src=\"img/location.png\" width=\"50\" class=\"img-responsive\" style=\"margin-top: 20px;\">"+
-    "</div>"+
-
     "<div class=\"col-xs-9\" style=\"padding: 0\">"+
-        "<h5 style=\"font-weight: bold;\">"+datax[i].customer+"</h5>"+
-        "<span style=\"font-size: 10px;\">"+datax[i].destination+"</span>"+
+        "<h5 style=\"font-weight: bold;\">"+localStorage.user+"</h5>"+
+        "<span style=\"font-size: 11px;\">"+datax[i].description+"</span>"+
     "</div>"+
     "<div class=\"col-xs-12 mtop\" style=\"padding: 0;\">"+
-        "<span>Total : <b>Rp "+idr_format(datax[i].amount)+"</b></span> &nbsp; "+
-        "<small>Delivery : Rp "+idr_format(datax[i].shipping)+" </small> <br>"+
-        "<span class=\"ff2\">"+datax[i].payment_type+"</span>"+
+        "<span> <b> Pelapor : </b> "+datax[i].reporter+" / "+datax[i].reporter_phone+" </span> &nbsp; "+
     "</div>"+
 "</div>"+
 "</div> <br>";

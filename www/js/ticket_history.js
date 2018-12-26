@@ -4,10 +4,16 @@ var reachedMax = false;
 
 get_order();
 
-$(window).scroll(function(){    
-    if ($(window).scrollTop() == $(document).height() - $(window).height()){
-        get_order();
-    }
+$(window).scroll(function(){   
+    var lastScrollTop = 0;
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop){
+        // downscroll code
+        if (Math.round(st) == $(document).height() - $(window).height()){
+           get_order();
+        }    
+    } 
+    lastScrollTop = st;
 });
 
 function get_order(){

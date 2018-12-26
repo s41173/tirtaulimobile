@@ -31,10 +31,10 @@
     
     <script src="js/acl.js"></script>
     <script src="js/routing.js"></script>
-    <script src="js/billing.js"></script>
+    <script src="js/ticket.js"></script>
 
 </head>
-<body id="topup" onload="setitem();">
+<body id="topup" onload="">
 
     <!-- loader class -->
 <div class="loader"></div>
@@ -54,13 +54,18 @@
       </header>
        
      <div class="container-fluid" id="login">
-         <h3 class="text-center">  Informasi Tagihan </h3>
+         <h3 class="text-center"> Keluhan Pelanggan </h3>
          <form action="" id="material">
             <div class="group">
-<input type="text" id="tinstalasi" style="width: 96%;" placeholder="Instalasi"><span class="highlight">
+<input type="number" id="tmobile" style="width: 96%;" placeholder="No Handphone"><span class="highlight">
 </span><span id="barname" class="bar"></span>
             </div>
-            <button type="button" class="btn" onclick="infoair()"> Process </button>
+            <div class="group">
+              <!-- <input type="text" id="tinstalasi" style="width: 96%;" placeholder="Instalasi"><span class="highlight"> -->
+<textarea id="tdesc" style="width:95%;" rows="3" placeholder="Keterangan Keluhan"></textarea> <span class="highlight"></span>
+</span><span id="barname" class="bar"></span>
+            </div>
+            <button type="button" class="btn" onclick="ticketprocess()"> Process </button>
         </form>
         <script>
             $(window, document, undefined).ready(function() {
@@ -143,46 +148,6 @@
                 }
 
             </style>
-
-            <div id="tablebox" class="col-xs-12 mtop2" style="padding: 0; margin-bottom:50px;">
-                <h5 id="titleair" class="text-center tittable" style="display:none;"> Info Air </h5>
-                <table id="tableair" class="table total" style="display:block; width:100%; padding-left:5%;">
-                  <!-- <tr>
-                    <th> Bulan </th>
-                    <th> Pemakaian </th>
-                    <th> Jumlah </th>
-                    <th> Ket </th>
-                  </tr> -->
-
-                  <!-- <tr>
-                    <td> Okt </td>
-                    <td> 20 <sup>m3</sup> </td>
-                    <td> 310.000 </td>
-                    <td> LUNAS </td>
-                  </tr> -->
-                   
-                </table>
-
-                <!-- info nonair -->
-                <h5 id="titlenonair" class="text-center tittable" style="display:none;"> Info Non Air </h5>
-                <table id="tablenonair" class="table total" style="display:block; width:83%; padding-left:5%;">
-                  <!-- <tr>
-                    <th> Bulan </th>
-                    <th> Pemakaian </th>
-                    <th> Jumlah </th>
-                    <th> Ket </th>
-                  </tr> -->
-
-                  <!-- <tr>
-                    <td> Okt </td>
-                    <td> 20 <sup>m3</sup> </td>
-                    <td> 310.000 </td>
-                    <td> LUNAS </td>
-                  </tr> -->
-                   
-                </table>
-
-            </div> 
         
     </div>
     

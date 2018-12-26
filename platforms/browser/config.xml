@@ -9,12 +9,12 @@
     <feature name="BackgroundMode">
         <param name="browser-package" value="BackgroundMode" />
     </feature>
-    <name>Wamenak Driver</name>
+    <name>PDAM-Tirtauli</name>
     <description>
-	Wamenak Driver
+	PDAM-Tirtauli Application
     </description>
-    <author email="info@wamenak.com" href="http://wamenak.com">
-       Wamenak
+    <author email="info@wamenak.com" href="http://www.pdamtirtauli.com">
+       PDAM Tirtauli
     </author>
     <content src="index.html" />
     <access origin="*" />

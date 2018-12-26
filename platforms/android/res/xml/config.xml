@@ -66,12 +66,12 @@
     <feature name="BackgroundMode">
         <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode" />
     </feature>
-    <name>Wamenak Driver</name>
+    <name>PDAM-Tirtauli</name>
     <description>
-	Wamenak Driver
+	PDAM-Tirtauli Application
     </description>
-    <author email="info@wamenak.com" href="http://wamenak.com">
-       Wamenak
+    <author email="info@wamenak.com" href="http://www.pdamtirtauli.com">
+       PDAM Tirtauli
     </author>
     <content src="index.html" />
     <access origin="*" />

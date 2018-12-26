@@ -8,12 +8,12 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Wamenak">
+    <meta name="apple-mobile-web-app-title" content="Tirtauli-Mobile">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <!-- Theme color for chrome, firefox and opera-->
-    <meta name="theme-color" content="#27a542">
+    <meta name="theme-color" content="#000">
     <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#27a542">
+    <meta name="msapplication-navbutton-color" content="#fff">
 
     <title>Wamenak-Driver</title>
 
@@ -31,14 +31,10 @@
     
     <script src="js/acl.js"></script>
     <script src="js/routing.js"></script>
-    <script src="js/topup.js"></script>
-    
-    <script type="text/javascript">
-        function goBack() { window.location = "index.html"; }
-    </script>
+    <script src="js/billing.js"></script>
 
 </head>
-<body id="topup" onload="otentikasi('topup');">
+<body id="topup" onload="setitem();">
 
     <!-- loader class -->
 <div class="loader"></div>
@@ -52,24 +48,19 @@
         <div id="main-nav">
           <nav class="navbar">
               <div class="navbar-header">
-                  <button onclick="goBack()" id="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-                  <div class="navbar-brand text-center">
-                      <img src="img/mylogo.png" alt="" class="img-responsive" width="85" style="margin:-12% 0 0 -15%;">
-                      <h4 style="color:#e8af00;font-weight: bold;margin-right:25px;">Driver</h4>
-                  </div>
               </div>
           </nav>
         </div>
       </header>
        
      <div class="container-fluid" id="login">
-         <h3 class="text-center">Top-Up E-Wallet</h3>
+         <h3 class="text-center">  Informasi Tagihan </h3>
          <form action="" id="material">
             <div class="group">
-<input type="number" id="tphone" style="width: 96%;"><span class="highlight"></span><span id="barname" class="bar"></span>
-                <label>No. Mobile Customer </label>
+<input type="text" id="tinstalasi" style="width: 96%;" placeholder="Instalasi"><span class="highlight">
+</span><span id="barname" class="bar"></span>
             </div>
-            <button type="button" class="btn" onclick="topup()"> Process </button>
+            <button type="button" class="btn" onclick="infoair()"> Process </button>
         </form>
         <script>
             $(window, document, undefined).ready(function() {
@@ -145,46 +136,56 @@
             });
             </script>
 
-            <div class="col-xs-12 mtop2" style="padding: 0;">
-                <table class="table total" id="tcust" style="display:none; width:100%; padding-left:5%;">
-                  <tr>
-                    <td>Nama Customer :</td>
-                    <td><b id="name"></b></td>
-                  </tr>
+            <style type="text/css">
+                
+                .tittable{
+                  font-weight: bold;
+                }
 
-                  <tr>
-                    <td>No. HP :</td>
-                    <td><b id="no"></b> <input type="hidden" id="hcust"> </td>
-                  </tr>
-                  
-                  <tr>
-                    <td colspan="2">
-<style>
-    #camount{
-        border: none;
-    }
-</style>
+            </style>
 
-<select id="camount" class="form-control">
-    <option value="50000">Rp. 50.000,- </option>
-    <option value="100000">Rp. 100.000,- </option>
-    <option value="250000">Rp. 250.000,- </option>
-    <option value="500000">Rp. 500.000,- </option>
-    <option value="1000000">Rp. 1.000.000,- </option>
-</select>                    
-                    </td>
-                  </tr>
-                  
+            <div id="tablebox" class="col-xs-12 mtop2" style="padding: 0; margin-bottom:50px;">
+                <h5 id="titleair" class="text-center tittable" style="display:none;"> Info Air </h5>
+                <table id="tableair" class="table total" style="display:block; width:100%; padding-left:5%;">
+                  <!-- <tr>
+                    <th> Bulan </th>
+                    <th> Pemakaian </th>
+                    <th> Jumlah </th>
+                    <th> Ket </th>
+                  </tr> -->
+
+                  <!-- <tr>
+                    <td> Okt </td>
+                    <td> 20 <sup>m3</sup> </td>
+                    <td> 310.000 </td>
+                    <td> LUNAS </td>
+                  </tr> -->
+                   
                 </table>
 
-                <form action="#">
-<button type="button" id="btop" onclick="process()" class="btn balance2" style="display:none; !important;">Top Up</button>
-               </form>
-            </div>
+                <!-- info nonair -->
+                <h5 id="titlenonair" class="text-center tittable" style="display:none;"> Info Non Air </h5>
+                <table id="tablenonair" class="table total" style="display:block; width:83%; padding-left:5%;">
+                  <!-- <tr>
+                    <th> Bulan </th>
+                    <th> Pemakaian </th>
+                    <th> Jumlah </th>
+                    <th> Ket </th>
+                  </tr> -->
+
+                  <!-- <tr>
+                    <td> Okt </td>
+                    <td> 20 <sup>m3</sup> </td>
+                    <td> 310.000 </td>
+                    <td> LUNAS </td>
+                  </tr> -->
+                   
+                </table>
+
+            </div> 
         
     </div>
     
-<script src="js/cekorder.js"></script>    
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
