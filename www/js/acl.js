@@ -47,7 +47,7 @@ function otentikasi(page){
     $(document).ready(function(e){  
 
         var bodyId = document.body.id;   
-        var nilai = '{ "custid":"'+localStorage.userid+'", "log":"'+localStorage.log+'" }';
+        var nilai = '{ "custid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "device":"'+localStorage.device+'" }';
         var mess = null;
         
         $.ajax({
