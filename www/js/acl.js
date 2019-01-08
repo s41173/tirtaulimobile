@@ -1,4 +1,5 @@
-var api = "http://api.delica.co.id/cirest/index.php/";
+var api = "http://www.pdamtirtauli.com/cc/index.php/";
+// http://www.pdamtirtauli.com/cc/index.php/api/login
 
 $(document).ready(function () {
 

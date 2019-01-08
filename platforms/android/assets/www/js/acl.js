@@ -47,7 +47,7 @@ function otentikasi(page){
     $(document).ready(function(e){  
 
         var bodyId = document.body.id;   
-        var nilai = '{ "custid":"'+localStorage.userid+'", "log":"'+localStorage.log+'" }';
+        var nilai = '{ "custid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "device":"'+localStorage.device+'" }';
         var mess = null;
         
         $.ajax({
@@ -88,25 +88,25 @@ function otentikasi(page){
 
 function logout(){
 
-    localStorage.removeItem("instalasi");
-    localStorage.removeItem("userid");
-    localStorage.removeItem("user");
-    localStorage.removeItem("log");
-    window.location = "login.html";
+    // localStorage.removeItem("instalasi");
+    // localStorage.removeItem("userid");
+    // localStorage.removeItem("user");
+    // localStorage.removeItem("log");
+    // window.location = "login.html";
 
-    // navigator.notification.confirm('Are you sure want to logout ?'
-    //         , function(button) {
-    //             if (button == 2 || button == 0) {
-    //    localStorage.removeItem("instalasi");
-    //    localStorage.removeItem("userid");
-    //    localStorage.removeItem("user");
-    //    localStorage.removeItem("log");
-    //     window.location = "login.html";
-    //             }
-    //         }
-    //         , 'Logout ?'
-    //         , ['No way', 'Logout']
-    // );
+    navigator.notification.confirm('Are you sure want to logout ?'
+            , function(button) {
+                if (button == 2 || button == 0) {
+       localStorage.removeItem("instalasi");
+       localStorage.removeItem("userid");
+       localStorage.removeItem("user");
+       localStorage.removeItem("log");
+        window.location = "login.html";
+                }
+            }
+            , 'Logout ?'
+            , ['No way', 'Logout']
+    );
 }
 
 // ----------------------------- acl --------------------------------------------------------

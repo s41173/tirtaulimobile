@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.phonegap.wamenakdriver;
+package com.phonegap.pdamtirtauli;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.wamenakdriver" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.phonegap.pdamtirtauli" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
@@ -66,9 +66,9 @@
     <feature name="BackgroundMode">
         <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode" />
     </feature>
-    <name>PDAM-Tirtauli</name>
+    <name>PDAM Tirtauli</name>
     <description>
-	PDAM-Tirtauli Application
+	PDAM Tirtauli Application
     </description>
     <author email="info@wamenak.com" href="http://www.pdamtirtauli.com">
        PDAM Tirtauli
@@ -114,7 +114,7 @@
     <preference name="android-targetSdkVersion" value="21" />
     <preference name="orientation" value="portrait" />
     <preference name="SplashScreen" value="xscreen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreenDelay" value="4000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="AutoHideSplashScreen" value="true" />
 </widget>
